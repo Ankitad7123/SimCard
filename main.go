@@ -3,10 +3,12 @@ package main
 import (
 	"fmt"
 	"log"
+	"os"
 	"simcard/models"
 	"simcard/routes"
 
 	"github.com/gin-gonic/gin"
+	"github.com/subosito/gotenv"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -30,9 +32,14 @@ func CORSMiddleware() gin.HandlerFunc {
 	}
 }
 
+func init() {
+	// Load environment variables from .env file
+	gotenv.Load()
+}
+
 func main() {
 	r := gin.Default()
-	dsn := "host=ep-damp-rice-a5togm62.us-east-2.aws.neon.tech user=postgressql;_owner password=UqCdayGo6N2x dbname=postgressql; port=5432 sslmode=require"
+	dsn := os.Getenv("DATABASE_URL")
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		log.Fatal(err)
