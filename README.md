@@ -58,7 +58,7 @@ Endpoint: POST /deactivate?phoneno={phoneno}**
   }
 }
 **3. Get Sim Card Details
-Endpoint: GET /sim-details/{simNumber}**
+Endpoint: GET /simdetails/{simNumber}**
 
 {
   "sim_details": {
