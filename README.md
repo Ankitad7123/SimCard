@@ -15,11 +15,7 @@ GORM: ORM (Object Relational Mapping) library for interacting with the database.
 PostgreSQL: Database used for storing sim card records.
 
 
-├── controllers     # Contains the logic for handling requests
-├── models          # Defines the schema for the database (SimcardSchema)
-├── routes          # Sets up API routes/endpoints
-├── main.go         # Entry point of the application
-└── go.mod 
+
 
 
 
